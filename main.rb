@@ -31,23 +31,27 @@ end
 post '/purchase/:id' do
   @product = Item.find(params[:id])
   @sold = params[:quantity]
-  @product.update_attributes!(
-    quantity: @product.quantity.to_i - @sold.to_i,
-    sold: @product.sold.to_i + @sold.to_i,
-  )
-  @total = @product.price.to_i * @sold.to_i
-  @payment = MoneyCalculator.new(
-    params[:ones].to_i, 
-    params[:fives].to_i,
-    params[:tens].to_i, 
-    params[:twenties].to_i, 
-    params[:fifties].to_i, 
-    params[:hundreds].to_i, 
-    params[:five_hundreds].to_i, 
-    params[:thousands].to_i,
-    @total.to_i
+  if @sold.to_i > @product.quantity
+    erb :purchase_fail
+  else
+    @product.update_attributes!(
+      quantity: @product.quantity.to_i - @sold.to_i,
+      sold: @product.sold.to_i + @sold.to_i,
     )
-  erb :purchase
+    @total = @product.price.to_i * @sold.to_i
+    @payment = MoneyCalculator.new(
+      params[:ones].to_i, 
+      params[:fives].to_i,
+      params[:tens].to_i, 
+      params[:twenties].to_i, 
+      params[:fifties].to_i, 
+      params[:hundreds].to_i, 
+      params[:five_hundreds].to_i, 
+      params[:thousands].to_i,
+      @total.to_i
+      )
+    erb :purchase
+  end
 end
 
 # END OF ROUTES FOR CUSTOMER SECTION

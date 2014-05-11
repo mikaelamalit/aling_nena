@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pagbili : Aling Nena </title>
+
+    <!-- Local Style -->
+
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-center">
+        <div class="navbar-inner">
+             <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                       <span class="icon-bar"><img src="/css/nena.png"/></span>
+                  </a>
+                  <div class="nav-collapse">
+                       <ul class="nav">
+                            <li><a href="/">Aling Nena</a></li>
+                            <li class="active"><a href="#">Mga Paninda</a></li>
+                            <li><a href="/about">Ang Pinagmulan</a></li>
+                            <li><a href="/contact">Kontak</a></li>
+                       </ul>
+                  </div><!--/.nav-collapse -->
+             </div><!-- container -->
+        </div><!-- navbar-inner -->
+    </div><!--  navbar navbar-fixed-top -->
+
+    <div class="container">
+
+      <div class="form-bg">
+        <div class="hd"><h1><%= "Bilin ang #{@product.name}" %></h1></div>
+        <p>Natitirang piraso: <b><%= @product.quantity %></b> na piraso<br/>
+        Presyo nito: P<label for="price" name="price"><%= @product.price %></label></p>
+        <form role="form" method="POST" action="<%= "/purchase/#{@product.id}" %>">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="quantity" class="col-sm-2 control-label">Bilang ng Bibilin</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="quantity" placeholder="<%= "Ilan ang bibilin niyong #{@product.name}?" %>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bills" class="col-sm-2 control-label">Bilang ng Ipangpapabayad</label>
+              <div class="row">
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="ones" placeholder="P1 na barya">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="fives" placeholder="P5 na barya">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="tens" placeholder="P10 na barya">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="twenties" placeholder="P20 na papel">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="fifties" placeholder="P50 na papel">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="hundreds" placeholder="P100 na papel">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="five_hundreds" placeholder="P500 na papel">
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" name="thousands" placeholder="P1000 na papel">
+                </div>
+            </div><br/>
+                <button type="submit" class="btn btn-default btn-primary"><%= "Bilin ang #{@product.name}" %></button><br/><br/>
+                <a href="/products"><img src="/css/index-btn.png"/></a>
+
+          </form>
+      </div>
+
+    </div><!-- /.container -->
+
+    <div class="cred">©2014 <a href="http://www.github.com/mikaelamalit">Mikaela Malit</a><br/>Tindahan ni Aling Nena</a></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -8,13 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mga Paninda : Aling Nena </title>
+    <title>Pagbili : Aling Nena </title>
 
     <!-- Local Style -->
     
     <link href="/css/style.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
+    
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/css/admin.css" rel="stylesheet">
@@ -37,51 +38,26 @@
                   <div class="nav-collapse">
                        <ul class="nav">
                             <li><a href="/">Aling Nena</a></li>
-                            <li><a href="/products">Mga Paninda (Kliyente)</a></li>
+                            <li class="active"><a href="#">Mga Paninda</a></li>
                             <li><a href="/about">Ang Pinagmulan</a></li>
                             <li><a href="/contact">Kontak</a></li>
-                            <li class="active"><a href="#">Mga Paninda (Aling Nena)</a></li>
                        </ul>
                   </div><!--/.nav-collapse -->
              </div><!-- container -->
         </div><!-- navbar-inner -->
     </div><!--  navbar navbar-fixed-top -->
 
-
     <div class="container">
-
-      <div class="admin">
-        <div class="hd"><h1>Mga Paninda</h1></div>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <td>ID</td>
-              <td>Pangalan</td>
-              <td>Presyo</td>
-              <td>Bilang</td>
-              <td>Nabenta</td>
-            </tr>
-          </thead>
-          <tbody>
-          <% @products.each do |product| %>
-            <tr>
-              <td><%= product.id %></td>
-              <td><%= product.name %></td>
-              <td><%= product.price %></td>
-              <td><%= product.quantity %></td>
-              <td><%= product.sold %></td>
-              <td><a href="/edit_product/<%= product.id %>" class="btn btn-default btn-primary">Palitan</a></td>
-              <td><a href="/delete_product/<%= product.id %>" class="btn btn-default btn-danger">Tanggalin</a></td>
-            </tr>
-			<% end %>          
-			</tbody>          
-        </table>
-        <a href="/new_product" class="btn btn-default">Gumawa ng Bagong Produkto</a>
-      </div>
-    </div><!-- /.container -->
+      <div class="form-bg">
+      <div class="hd"><h1>Binili niyo ang <%= params[:quantity] %> na piraso ng <%= @product.name %>.</h1></div>
+      <p> P<%= @total %> ang kabuuan ng binili niyo.<br/>
+          <%= @payment.change %><br/><br/>
+          Maraming salamat sa pagtangkilik!
+      </p><br/>
+      <a href="/products"><img src="/css/index-btn.png"/></a>
+    </div><!-- container -->
 
     <div class="cred">©2014 <a href="http://www.github.com/mikaelamalit">Mikaela Malit</a><br/>Tindahan ni Aling Nena</a></div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

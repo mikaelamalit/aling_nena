@@ -8,13 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mga Paninda : Aling Nena </title>
-
-    <!-- Local Style -->
+    <title>Kontak : Aling Nena </title><!-- Local Style -->
     
     <link href="/css/style.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
+    
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/css/admin.css" rel="stylesheet">
@@ -37,51 +36,39 @@
                   <div class="nav-collapse">
                        <ul class="nav">
                             <li><a href="/">Aling Nena</a></li>
-                            <li><a href="/products">Mga Paninda (Kliyente)</a></li>
+                            <li><a href="/products">Mga Paninda</a></li>
                             <li><a href="/about">Ang Pinagmulan</a></li>
-                            <li><a href="/contact">Kontak</a></li>
-                            <li class="active"><a href="#">Mga Paninda (Aling Nena)</a></li>
+                            <li class="active"><a href="#">Kontak</a></li>
                        </ul>
                   </div><!--/.nav-collapse -->
              </div><!-- container -->
         </div><!-- navbar-inner -->
     </div><!--  navbar navbar-fixed-top -->
 
-
     <div class="container">
-
-      <div class="admin">
-        <div class="hd"><h1>Mga Paninda</h1></div>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <td>ID</td>
-              <td>Pangalan</td>
-              <td>Presyo</td>
-              <td>Bilang</td>
-              <td>Nabenta</td>
-            </tr>
-          </thead>
-          <tbody>
-          <% @products.each do |product| %>
-            <tr>
-              <td><%= product.id %></td>
-              <td><%= product.name %></td>
-              <td><%= product.price %></td>
-              <td><%= product.quantity %></td>
-              <td><%= product.sold %></td>
-              <td><a href="/edit_product/<%= product.id %>" class="btn btn-default btn-primary">Palitan</a></td>
-              <td><a href="/delete_product/<%= product.id %>" class="btn btn-default btn-danger">Tanggalin</a></td>
-            </tr>
-			<% end %>          
-			</tbody>          
-        </table>
-        <a href="/new_product" class="btn btn-default">Gumawa ng Bagong Produkto</a>
+      <div class="root">
+        <div class="hd"><h1>Kontakin si Aling Nena</h1></div>
+        <p><div class="text">
+        Nais ni Aling Nena ng mabilis at maaasahang paraan nang pagkontak ng kanyang mga suki kaya naitayo ang Tindahan ni Aling Nena website. Kaakibat ng hakbang na ito, gumawa din siya ng email address at mga numerong pang negosyo para mapadali ang proseso ng palitan ng impormasyon.
+        <br/><br/>
+        Narito ang mga sumusunod na detayle ng pang kontak ni Aling Nena:
+        <br/><br/>
+        <ul>
+          <li>Email address: <b>alingnena@tindahan.com.ph</b></li>
+          <li>Numero ng selpon: <b>0917-600-NENA(6362)</b></li>
+          <li>Numero ng landlayn: <b>234-NENA(6362)</b></li>
+        </ul><br/>
+        Kung gusto niyong puntahan mismo si Aling Nena, matatagpuan ang kanyang tindahan sa<br/>
+        <b> Block 8 Lot 1 Aling Nena Avenue, Aling Nena Extension, Aling Nena City</b>.<br/><br/>
+        Ikinagagalak pong sagutin ni Aling Nena ang anumang katanungan o mungkahi niyo.</br><br/></div>
+        <p>Sa tindahan lang ni Aling Nena makikita,<br/>
+        <b>Sari-saring paninda sa murang halaga, hatid ng kaiga-igayang tindera!</b></p>
+        <br/><br/><a href="/products"><img src="/css/index-btn.png"/></a>
+        </p>
       </div>
+
     </div><!-- /.container -->
-
     <div class="cred">©2014 <a href="http://www.github.com/mikaelamalit">Mikaela Malit</a><br/>Tindahan ni Aling Nena</a></div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

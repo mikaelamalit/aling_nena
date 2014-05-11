@@ -1,0 +1,70 @@
+.navbar .nav,
+.navbar .nav > li {
+  float:none;
+  display:inline-block;
+  vertical-align: top;
+  font-size: 20px;
+  font-family: Helvetica;
+}
+.navbar .nav{
+  background-color:#fcad08;
+}
+.navbar .nav > li > a{
+    color: #333333;
+    background-color: #fcad08;
+}
+.navbar .nav > li > a:hover,
+.navbar .nav > .active > a,
+.navbar .nav > li a:focus{
+	background-color: #f75019;
+	color: #FFFFFF;
+}
+.navbar-inner {
+  text-align:center;
+  border-top: 1px solid solid;
+}
+.container{
+	text-align: center!important;
+}
+body{
+ 	background-size: 1440px 1200px;
+ 	background-repeat:no-repeat;
+ 	display: compact;
+ }
+.thumbnail{
+    background-color: #6aaf32!important;
+}
+p{
+  font-size: 20px!important;
+}
+.text{
+  font-size: 20px!important;
+  text-align: left;
+}
+.hd {
+  background-color: #fdfcb3;
+  border-color:#f75019!important;
+  border-top:solid;
+  border-bottom:solid;
+  margin-bottom: 20px;
+}
+.caption {
+    background:rgba(255,255,255, 0.3);
+    color:#000 !important;
+}
+.caption > h3{
+  color: #fff;
+}
+.cred{
+  text-align:center!important;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  color:#6aaf32;
+}
+.cred > a, .cred > a:hover{
+  color:#f75019;
+}
+
+images from: 
+https://c2.staticflickr.com/4/3419/3820226770_e87c9a804e.jpg
+http://3.bp.blogspot.com/_lTCajN-GnD4/SFDmmK6sTkI/AAAAAAAAAvE/2NS4lj-4fv0/s400/Aling+Nene.jpg
